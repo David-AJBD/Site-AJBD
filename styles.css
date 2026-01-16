@@ -310,3 +310,22 @@ small.helper{color:var(--brand-muted)}
 .card-apo-academique h3{
   color:#0f172a;
 }
+
+/* Modal : photo entière mais volontairement plus petite */
+.card-modal-content .team-photo-wrap{
+  width: 100%;
+  height: auto;
+  overflow: visible;
+  display: flex;
+  justify-content: center; /* centre la photo */
+}
+
+.card-modal-content .team-photo{
+  width: 20%;              /* ← 2 fois plus petite */
+  height: auto;
+  object-fit: contain;     /* photo entière */
+  display: block;
+  max-height: 45vh;        /* sécurité écran */
+}
+
+
