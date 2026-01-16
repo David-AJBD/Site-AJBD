@@ -524,13 +524,40 @@ Enzo intervient également au sein du pôle Transport et Mobilité où il contri
   <div class="container">
     <div class="grid grid-2" style="display:grid;gap:24px;grid-template-columns:repeat(2,minmax(0,1fr));">
 <div class="card">
-      <form onsubmit="event.preventDefault()">
-        <label>Nom<br/><input type="text" placeholder="Votre nom" style="width:100%;padding:10px;border:1px solid #e5e7eb;border-radius:10px;margin:6px 0 12px 0"/></label>
-        <label>E‑mail<br/><input type="email" placeholder="vous@exemple.fr" style="width:100%;padding:10px;border:1px solid #e5e7eb;border-radius:10px;margin:6px 0 12px 0"/></label>
-        <label>Sujet<br/><input type="text" placeholder="Objet de votre demande" style="width:100%;padding:10px;border:1px solid #e5e7eb;border-radius:10px;margin:6px 0 12px 0"/></label>
-        <label>Message<br/><textarea placeholder="Décrivez votre besoin…" style="width:100%;height:120px;padding:10px;border:1px solid #e5e7eb;border-radius:10px;margin:6px 0 12px 0"></textarea></label>
-        <button class="btn btn-primary" type="submit">Envoyer</button>
-      </form>
+      
+<form name="contact"
+      method="POST"
+      data-netlify="true"
+      data-netlify-honeypot="bot-field"
+      action="/merci/">
+
+  <!-- obligatoire pour Netlify Forms -->
+  <input type="hidden" name="form-name" value="contact">
+
+  <!-- honeypot anti-spam (doit rester caché) -->
+  <p style="display:none;">
+    <label>Ne pas remplir : <input name="bot-field"></label>
+  </p>
+
+  <label>Nom<br/>
+    <input name="nom" type="text" required>
+  </label>
+
+  <label>E-mail<br/>
+    <input name="email" type="email" required>
+  </label>
+
+  <label>Sujet<br/>
+    <input name="sujet" type="text" required>
+  </label>
+
+  <label>Message<br/>
+    <textarea name="message" required></textarea>
+  </label>
+
+  <button class="btn btn-primary" type="submit">Envoyer</button>
+</form>
+
     </div>
     <div>
       <div class="h2" style="font-size:22px;margin:0 0 10px 0;">Coordonnées</div>
