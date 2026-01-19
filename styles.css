@@ -180,6 +180,10 @@ small.helper{color:var(--brand-muted)}
   background:#ffe4ef;
   color:#be185d;
 }
+.badge-green{
+  background:#E4F6DE;
+  color:#196B24;
+}
 .social-row{
   margin-top:8px;
 }
